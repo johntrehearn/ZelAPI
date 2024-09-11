@@ -43,3 +43,25 @@ input {
     grid-template-columns: repeat(3, 1fr);
     align-self: center;
 }
+
+.card {
+    background-color: rgb(4, 29, 167);
+    margin: 20px;
+    position: relative;
+    border: black 10px solid;
+    border-radius: 20px;
+}
+
+.displayResults img {
+    width: 100%;
+    object-fit: contain;
+    background-repeat: space round;
+    height: 300px;
+    padding: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
