@@ -29,3 +29,17 @@ input {
     min-width: 20%;
     font-size: 30px;
 }
+
+.container {
+    margin: 0, auto;
+    gap: 1rem;
+    font-size: 2rem;
+
+}
+
+
+.displayResults {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-self: center;
+}
