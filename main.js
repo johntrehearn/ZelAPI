@@ -14,6 +14,7 @@ const fetchData = async () => {
                 id: item.id,
                 name: item.name,
                 img: item.image,
+                description: item.description,
             };
         });
 
@@ -36,6 +37,9 @@ const zeldaCards = (searchString) => {
         <h3 class="name_card">${monster.name.toUpperCase()}</h3>
         <div>
             <img src="${monster.img}" alt="${monster.name}"/>
+        </div>
+        <div>
+        <p class="description"> ${monster.description} </p>
         </div>
         </div>`;
     })

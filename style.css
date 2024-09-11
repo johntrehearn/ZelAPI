@@ -8,7 +8,7 @@ body {
     background-color: rgb(23, 112, 23);
 }
 
-input[type="searchbar"]::placeholder {
+input[type="search"]::placeholder {
     text-align: center;
 }
 
@@ -36,7 +36,6 @@ input {
     font-size: 2rem;
 
 }
-
 
 .displayResults {
     display: grid;
@@ -66,4 +65,11 @@ p {
     font-size: 1.5rem;
     color: white;
     text-align: center;
+}
+
+.description {
+   
+    color: rgb(228, 226, 226);
+    text-align: center;
+    margin: 20px;
 }
