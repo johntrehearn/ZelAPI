@@ -31,7 +31,7 @@ input {
 }
 
 .container {
-    margin: 0, auto;
+    margin: 0 auto;
     gap: 1rem;
     font-size: 2rem;
 
@@ -58,6 +58,8 @@ input {
     background-repeat: space round;
     height: 300px;
     padding: 1rem;
+    border-top: 5px solid rgb(46, 6, 6);
+    overflow: hidden;
 }
 
 p {
