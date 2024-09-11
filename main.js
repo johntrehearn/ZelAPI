@@ -1,14 +1,18 @@
 const zeldaDisplay = document.querySelector('.displayResults');
 const searchBar = document.getElementById('searchbar');
+const infoButton = document.querySelectorAll('.btn');
+
 let zeldaData = [];
 
+let reqData = '';
+
 const fetchData = async () => {
-    await fetch('https://botw-compendium.herokuapp.com/api/v3/compendium/category/monsters')
+    await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/category/${reqData}`)	
     .then(res => res.json())
     .then((data) => {
         console.log(data); // Log the response to inspect its structure
 
-        // Assuming the structure is { data: { category: [items] } }
+        // Adjust the structure based on the actual response
         const fetches = data.data.map((item) => {
             return {
                 id: item.id,
@@ -48,12 +52,25 @@ const zeldaCards = (searchString) => {
 }
 
 
-searchbar.addEventListener('keyup', (e) => {
+searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
     console.log(searchString);
    zeldaCards(searchString);
 
 });
 
+const infoBut = () => {
+    infoButton.forEach((button) => 
+    button.addEventListener('click', () => {
+        let info = button.getAttribute('id');
+        console.log('Button INFO is ', info);
+        reqData = info;
+        console.log('REQ DATA is ', reqData);
+        fetchData(); 
+    })
+    );
+}
 
 fetchData();
+
+infoBut();
