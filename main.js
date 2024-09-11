@@ -1,5 +1,5 @@
 const zeldaDisplay = document.querySelector('.displayResults');
-
+const searchBar = document.getElementById('searchbar');
 let zeldaData = [];
 
 const fetchData = async () => {
@@ -24,8 +24,11 @@ const fetchData = async () => {
 };
 
 
-const zeldaCards = (all) => {
+const zeldaCards = (searchString) => {
     const cards = zeldaData
+    .filter((monster) => {
+        return monster.name.toLowerCase().includes(searchString);
+    })
     .map((monster) => {
         return `<div class="card">
         <p
@@ -39,6 +42,14 @@ const zeldaCards = (all) => {
     .join('');
     zeldaDisplay.innerHTML = cards;
 }
+
+
+searchbar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(searchString);
+   zeldaCards(searchString);
+
+});
 
 
 fetchData();
